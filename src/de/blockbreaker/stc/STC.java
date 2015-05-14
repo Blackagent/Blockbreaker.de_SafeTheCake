@@ -13,8 +13,11 @@ public class STC {
         //==> instance:
         instance = this;
 
-        System.out.println(Prefix + "&2Spielmodus bereit!");
 
+
+
+        //==> Konsolenausgabe:
+        System.out.println(Prefix + "&2Spielmodus bereit!");
     }
 
     public static STC getInstance () {
