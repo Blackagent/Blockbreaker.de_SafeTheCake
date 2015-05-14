@@ -5,6 +5,10 @@ package de.blockbreaker.stc;
  */
 public class STC {
 
+    //Prefix:
+    public static String Prefix  = "Paintball";
 
+    public void onEnable() {
+    }
 
 }
