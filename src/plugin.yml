@@ -1,0 +1,8 @@
+name: SafeTheCake
+version: 1.0
+author: Blackagent_3LaF
+main: de.blockbreaker.stc.STC
+
+commands:
+  stc:
+    description:
