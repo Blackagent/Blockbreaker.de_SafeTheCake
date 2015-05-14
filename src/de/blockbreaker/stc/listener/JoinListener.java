@@ -15,7 +15,7 @@ public class JoinListener implements Listener{
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
 
-        Bukkit.broadcastMessage("&a" + p + " &7hat &bHunger &7auf &aKuchen!");
+        Bukkit.broadcastMessage("§a" + p + " §7hat §bHunger §7auf §aKuchen!");
 
 
     }

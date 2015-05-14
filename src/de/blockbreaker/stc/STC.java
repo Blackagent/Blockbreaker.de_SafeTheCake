@@ -6,7 +6,7 @@ package de.blockbreaker.stc;
 public class STC {
 
     //Prefix:
-    public static String Prefix  = "&c[Safe&bThe&aCake] ";
+    public static String Prefix  = "§c[Safe§bThe§aCake] ";
     private static STC instance;
 
     public void onEnable() {
@@ -17,7 +17,7 @@ public class STC {
 
 
         //==> Konsolenausgabe:
-        System.out.println(Prefix + "&2Spielmodus bereit!");
+        System.out.println(Prefix + "§2Spielmodus bereit!");
     }
 
     public static STC getInstance () {
