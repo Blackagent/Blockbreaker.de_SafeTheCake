@@ -10,7 +10,7 @@ public class STC {
     private static STC instance;
 
     public void onEnable() {
-        //==> instance:
+        //===> instance:
         instance = this;
 
 
