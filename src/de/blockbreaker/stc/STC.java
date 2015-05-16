@@ -16,7 +16,11 @@ public class STC {
     public void onEnable() {
         System.out.println(prefix + " erfolgreich geladen [by 3LaF]");
 
+        //MySQL
         MySQL.connect();
+        MySQL.createTable();
+
+
 
         //registerEvents
         //getCommand/Executor
@@ -26,7 +30,7 @@ public class STC {
 
     public void onDisable() {
 
-        //==> Konsolenausgabe:
+        //Konsolenausgabe:
         System.out.println(prefix + "§4Spielmodus nicht bereit!");
     }
 
