@@ -5,19 +5,23 @@ package de.blockbreaker.stc;
  */
 public class STC {
 
-    //Prefix:
-    public static String Prefix  = "§c[Safe§bThe§aCake] ";
     private static STC instance;
 
     public void onEnable() {
-        //===> instance:
+        //==> instance:
         instance = this;
 
 
 
 
         //==> Konsolenausgabe:
-        System.out.println(Prefix + "§2Spielmodus bereit!");
+        System.out.println(Data.Prefix + "§2Spielmodus bereit!");
+    }
+
+
+
+    public void onDisable() {
+
     }
 
     public static STC getInstance () {
