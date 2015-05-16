@@ -10,15 +10,19 @@ public class STC {
 
     private static STC instance;
 
+    @Override
     public void onEnable() {
-        //==> instance:
-        instance = this;
+        System.out.println(prefix + " erfolgreich geladen [by 3LaF]");
 
+        this.ConnectMySQL();
 
+        //registerEvents
+        //getCommand/Executor
+    }
 
-
-        //==> Konsolenausgabe:
-        System.out.println(prefix + "§2Spielmodus bereit!");
+    private void ConnectMySQL() {
+        mysql = new MySQL("localhost", "test", "test", "1234");
+        mysql.update("CREATE TABLE IF NOT EXISTS Stats(UUID varchar(64), KILLS int, DEATHS int, PUNKTE int)");
     }
 
 

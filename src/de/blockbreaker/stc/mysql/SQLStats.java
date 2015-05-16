@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Hauptklassen.Main;
-
+import de.blockbreaker.stc.STC;
 
 
 public class SQLStats {
@@ -64,7 +64,7 @@ public class SQLStats {
         if(playerExists(uuid)) {
 
             try{
-                ResultSet rs = Main.mysql.query("SELECT * FROM Stats WHERE UUID= '" + uuid + "'");
+                ResultSet rs = STC.mysql.query("SELECT * FROM Stats WHERE UUID= '" + uuid + "'");
                 if((!rs.next()) || (Integer.valueOf(rs.getInt("DEATHS")) == null ));
 
                 i = rs.getInt("DEATHS");
@@ -84,7 +84,7 @@ public class SQLStats {
 
     public static void setKills(String uuid, Integer kills) {
         if (playerExists(uuid)) {
-            Main.mysql.update("UPDATE Stats SET KILLS= '" + kills + "' WHERE UUID= '" + uuid + "';");
+            STC.mysql.update("UPDATE Stats SET KILLS= '" + kills + "' WHERE UUID= '" + uuid + "';");
         } else {
             createPlayer(uuid);
             setKills(uuid, kills);
@@ -93,7 +93,7 @@ public class SQLStats {
 
     public static void setDeaths(String uuid, Integer deaths) {
         if (playerExists(uuid)) {
-            Main.mysql.update("UPDATE Stats SET DEATHS= '" + deaths + "' WHERE UUID= '" + uuid + "';");
+            STC.mysql.update("UPDATE Stats SET DEATHS= '" + deaths + "' WHERE UUID= '" + uuid + "';");
         } else {
             createPlayer(uuid);
             setDeaths(uuid, deaths);
@@ -139,9 +139,6 @@ public class SQLStats {
         }
 
     }
-
-
-
 }
 
 
