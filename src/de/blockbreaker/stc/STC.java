@@ -1,5 +1,7 @@
 package de.blockbreaker.stc;
 
+import de.blockbreaker.stc.mysql.MySQL;
+
 /**
  * Created by Janne on 14.05.2015.
  */
@@ -14,15 +16,10 @@ public class STC {
     public void onEnable() {
         System.out.println(prefix + " erfolgreich geladen [by 3LaF]");
 
-        this.ConnectMySQL();
+        MySQL.connect();
 
         //registerEvents
         //getCommand/Executor
-    }
-
-    private void ConnectMySQL() {
-        mysql = new MySQL("localhost", "test", "test", "1234");
-        mysql.update("CREATE TABLE IF NOT EXISTS Stats(UUID varchar(64), KILLS int, DEATHS int, PUNKTE int)");
     }
 
 

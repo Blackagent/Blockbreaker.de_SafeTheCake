@@ -64,7 +64,7 @@ public class SQLStats {
 
             try{
                 ResultSet rs = MySQL.getResult("SELECT * FROM STC-Stats WHERE uuid= '" + uuid + "'");
-                if((!rs.next()) || (Integer.valueOf(rs.getInt("DEATHS")) == null ));
+                if((!rs.next()) || (Integer.valueOf(rs.getInt("deaths")) == null ));
 
                 deaths = rs.getInt("deaths");
 
@@ -83,7 +83,7 @@ public class SQLStats {
 
     public static void setKills(String uuid, Integer kills) {
         if (playerExists(uuid)) {
-            MySQL.update("UPDATE Stats SET KILLS= '" + kills + "' WHERE UUID= '" + uuid + "';");
+            MySQL.update("UPDATE STC-Stats SET KILLS= '" + kills + "' WHERE UUID= '" + uuid + "';");
         } else {
             createPlayer(uuid);
             setKills(uuid, kills);
