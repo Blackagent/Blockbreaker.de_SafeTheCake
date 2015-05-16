@@ -1,6 +1,7 @@
 package de.blockbreaker.stc.mysql;
 
 import de.blockbreaker.paintball.Paintball;
+import de.blockbreaker.stc.STC;
 import org.bukkit.Bukkit;
 
 import java.sql.Connection;
@@ -29,7 +30,7 @@ public class MySQL {
         if(!isConnected()){
             try {
                 con = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database, username, password);
-                Bukkit.getConsoleSender().sendMessage(Paintball.getInstance().prefixConsole + "MySQL Verbindung aufgebaut!");
+                Bukkit.getConsoleSender().sendMessage(STC.getInstance().prefix + "MySQL Verbindung aufgebaut!");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -41,7 +42,7 @@ public class MySQL {
         if(isConnected()) {
             try {
                 con.close();
-                Bukkit.getConsoleSender().sendMessage(Paintball.getInstance().prefixConsole + "MySQL Verbindung geschlossen!");
+                Bukkit.getConsoleSender().sendMessage(STC.getInstance().prefix + "MySQL Verbindung geschlossen!");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -53,31 +54,7 @@ public class MySQL {
 
     public static void createTable() {
 
-        //==> Teamgröße 4:
 
-        if(Paintball.teamsize == 4){
-            if(isConnected()) {
-                try {
-                    con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Paintball4vs4 (map VARCHAR(100), spawn1 VARCHAR(100), spawn2 VARCHAR(100), spawnspectator VARCHAR(100))");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-
-        //==> Teamgröße 8:
-
-        if(Paintball.teamsize == 8){
-            if(isConnected()) {
-                try {
-                    con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Paintball8vs8 (map VARCHAR(100), spawn1 VARCHAR(100), spawn2 VARCHAR(100), spawnspectator VARCHAR(100))");
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 
 
 
