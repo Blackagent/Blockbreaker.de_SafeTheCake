@@ -12,7 +12,7 @@ import java.io.IOException;
 public class MySQLManagement {
 
     public static File getMySQLFile() {
-        return new File("plugins/Paintball", "getMySQLFile");
+        return new File("plugins/SafeTheCake", "getMySQLFile");
     }
 
     public static FileConfiguration getMySQLFileConfiguration() {

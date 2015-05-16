@@ -1,6 +1,5 @@
 package de.blockbreaker.stc.mysql;
 
-import de.blockbreaker.paintball.Paintball;
 import de.blockbreaker.stc.STC;
 import org.bukkit.Bukkit;
 
@@ -54,7 +53,7 @@ public class MySQL {
 
     public static void createTable() {
 
-
+                    //con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Paintball4vs4 (map VARCHAR(100), spawn1 VARCHAR(100), spawn2 VARCHAR(100), spawnspectator VARCHAR(100))");
 
 
 
@@ -67,7 +66,6 @@ public class MySQL {
             }
         }
     }
-
 
 
     public static ResultSet getResult(String qry) {
