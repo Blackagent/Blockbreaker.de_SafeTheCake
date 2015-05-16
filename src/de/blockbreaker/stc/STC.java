@@ -12,8 +12,6 @@ public class STC {
         instance = this;
 
 
-
-
         //==> Konsolenausgabe:
         System.out.println(Data.Prefix + "§2Spielmodus bereit!");
     }
@@ -22,6 +20,8 @@ public class STC {
 
     public void onDisable() {
 
+        //==> Konsolenausgabe:
+        System.out.println("Data.Prefix + §4Spielmodus nicht bereit!");
     }
 
     public static STC getInstance () {

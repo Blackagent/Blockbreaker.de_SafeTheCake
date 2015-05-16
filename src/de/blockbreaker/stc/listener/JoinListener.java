@@ -17,6 +17,5 @@ public class JoinListener implements Listener{
 
         Bukkit.broadcastMessage("§a" + p + " §7möchte §aKuchen §bessen§7!");
 
-
     }
 }
