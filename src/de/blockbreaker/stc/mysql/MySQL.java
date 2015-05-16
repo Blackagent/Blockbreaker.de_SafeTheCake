@@ -69,6 +69,7 @@ public class MySQL {
     }
 
 
+
     public static ResultSet getResult(String qry) {
         if(isConnected()) {
             try {
