@@ -35,6 +35,7 @@ public class STC {
     }
 
     public static STC getInstance () {
+
         return instance;
     }
 }
