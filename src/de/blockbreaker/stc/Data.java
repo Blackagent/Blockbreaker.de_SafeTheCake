@@ -5,6 +5,11 @@ package de.blockbreaker.stc;
  */
 public class Data {
 
+    //Prefix:
+    public static String Prefix  = "§c[Safe§bThe§aCake] ";
 
 
+
+
+    
 }
