@@ -6,7 +6,6 @@ package de.blockbreaker.stc.mysql;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Hauptklassen.Main;
 import de.blockbreaker.stc.STC;
 
 
@@ -15,10 +14,10 @@ public class SQLStats {
     public static boolean playerExists(String uuid){
 
         try{
-            ResultSet rs = Main.mysql.query("SELECT * FROM Stats WHERE UUID= '" + uuid + "'");
+            ResultSet rs = MySQL.getResult("SELECT * FROM Stats WHERE uuid= '" + uuid + "'");
 
             if(rs.next()){
-                return rs.getString("UUID") !=null;
+                return rs.getString("uuid") !=null;
             }
             return false;
         }catch(SQLException e) {
@@ -29,21 +28,21 @@ public class SQLStats {
 
     public static void createPlayer(String uuid) {
         if(!(playerExists(uuid))) {
-            Main.mysql.update("INSERT INTO Stats(UUID, KILLS, DEATHS) VALUES ('" + uuid + "', '0', '0');");
+            MySQL.update("INSERT INTO STC-Stats(uuid, kills, deaths) VALUES ('" + uuid + "', '0', '0');");
         }
     }
 
 
     public static Integer getKills(String uuid) {
-        Integer i = 0;
+        int kills = 0;
 
         if(playerExists(uuid)) {
 
             try{
-                ResultSet rs = Main.mysql.query("SELECT * FROM Stats WHERE UUID= '" + uuid + "'");
-                if((!rs.next()) || (Integer.valueOf(rs.getInt("KILLS")) == null ));
+                ResultSet rs = MySQL.getResult("SELECT * FROM STC-Stats WHERE uuid= '" + uuid + "'");
+                if((!rs.next()) || (Integer.valueOf(rs.getInt("kills")) == null ));
 
-                i = rs.getInt("KILLS");
+                kills = rs.getInt("kills");
 
             }catch(SQLException e) {
                 e.printStackTrace();
@@ -55,19 +54,19 @@ public class SQLStats {
             getKills(uuid);
 
         }
-        return i;
+        return kills;
     }
 
     public static Integer getDeaths(String uuid) {
-        Integer i = 0;
+        int deaths = 0;
 
         if(playerExists(uuid)) {
 
             try{
-                ResultSet rs = STC.mysql.query("SELECT * FROM Stats WHERE UUID= '" + uuid + "'");
+                ResultSet rs = MySQL.getResult("SELECT * FROM STC-Stats WHERE uuid= '" + uuid + "'");
                 if((!rs.next()) || (Integer.valueOf(rs.getInt("DEATHS")) == null ));
 
-                i = rs.getInt("DEATHS");
+                deaths = rs.getInt("deaths");
 
             }catch(SQLException e) {
                 e.printStackTrace();
@@ -79,12 +78,12 @@ public class SQLStats {
             getDeaths(uuid);
 
         }
-        return i;
+        return deaths;
     }
 
     public static void setKills(String uuid, Integer kills) {
         if (playerExists(uuid)) {
-            STC.mysql.update("UPDATE Stats SET KILLS= '" + kills + "' WHERE UUID= '" + uuid + "';");
+            MySQL.update("UPDATE Stats SET KILLS= '" + kills + "' WHERE UUID= '" + uuid + "';");
         } else {
             createPlayer(uuid);
             setKills(uuid, kills);

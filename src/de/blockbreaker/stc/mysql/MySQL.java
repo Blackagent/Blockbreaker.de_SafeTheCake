@@ -45,7 +45,6 @@ public class MySQL {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
@@ -53,9 +52,16 @@ public class MySQL {
 
     public static void createTable() {
 
-                    //con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Paintball4vs4 (map VARCHAR(100), spawn1 VARCHAR(100), spawn2 VARCHAR(100), spawnspectator VARCHAR(100))");
-
-
+        //MySQL Tabelle "Stats": <uuid> <kills> <deaths>
+        
+        if (isConnected()) {
+            try {
+                con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS STC-Stats (uuid VARCHAR(100), kills VARCHAR(100), deaths VARCHAR(100))");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public static void update(String qry) {
         if(isConnected()) {
