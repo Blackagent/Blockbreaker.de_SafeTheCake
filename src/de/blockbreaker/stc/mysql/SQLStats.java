@@ -92,7 +92,7 @@ public class SQLStats {
 
     public static void setDeaths(String uuid, Integer deaths) {
         if (playerExists(uuid)) {
-            STC.mysql.update("UPDATE Stats SET DEATHS= '" + deaths + "' WHERE UUID= '" + uuid + "';");
+            MySQL.update("UPDATE STC-Stats SET deaths= '" + deaths + "' WHERE uuid= '" + uuid + "';"); //TODO: Hier geht es weiter mit überarbeiten!
         } else {
             createPlayer(uuid);
             setDeaths(uuid, deaths);
