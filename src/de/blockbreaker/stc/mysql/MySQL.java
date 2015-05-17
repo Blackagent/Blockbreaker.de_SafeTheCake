@@ -53,9 +53,16 @@ public class MySQL {
 
     public static void createTable() {
 
-        //con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Paintball4vs4 (map VARCHAR(100), spawn1 VARCHAR(100), spawn2 VARCHAR(100), spawnspectator VARCHAR(100))");
+        if(isConnected()) {
+            try {
+                con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS STC-Stats (uuid VARCHAR(100), kills VARCHAR(100), deaths VARCHAR(100))");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
+            //Hallo Justin, da ich so lieb bin - Hier muss die andere Tabelle rein wie da oben nur halt iwie maps nennen und dann als spalten spawn 1 spawn 2 und son scheiss alles als VARCHAR(100) :DD
 
+        }
     }
 
     public static void update(String qry) {
