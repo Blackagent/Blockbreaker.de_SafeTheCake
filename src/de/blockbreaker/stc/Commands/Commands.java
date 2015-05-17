@@ -29,7 +29,7 @@ public class Commands implements CommandExecutor {
                 p.sendMessage("           &4 /stc set teamspawn <farbe>");
                 p.sendMessage("           &4 /stc remove teamspawn <farbe> <id>");
                 p.sendMessage("           &4 /stc set Arena");
-                p.sendMessage("           &4 /stc set Händler");
+                p.sendMessage("           &4 /stc set Haendler");
                 p.sendMessage("           &4 /stc set spawner <art>");
                 p.sendMessage("§b=-=-=-=-=-§6 STC §4Help §b-=-=-=-=-=");
 
