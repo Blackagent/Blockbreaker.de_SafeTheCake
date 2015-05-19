@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Blockbreaker.de_SafeTheCake.iml" filepath="$PROJECT_DIR$/Blockbreaker.de_SafeTheCake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Blockbreaker.de_SafeTheCake.iml" filepath="$PROJECT_DIR$/.idea/Blockbreaker.de_SafeTheCake.iml" />
     </modules>
   </component>
 </project>
