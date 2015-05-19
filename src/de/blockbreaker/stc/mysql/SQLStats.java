@@ -146,7 +146,6 @@ public class SQLStats {
             createPlayer(uuid);
             removeDeaths(uuid, deaths);
         }
-
     }
 }
 
