@@ -6,8 +6,6 @@ package de.blockbreaker.stc.mysql;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import de.blockbreaker.stc.STC;
-
 
 public class SQLStats {
 
@@ -92,7 +90,7 @@ public class SQLStats {
 
     public static void setDeaths(String uuid, Integer deaths) {
         if (playerExists(uuid)) {
-            MySQL.update("UPDATE STC-Stats SET deaths= '" + deaths + "' WHERE uuid= '" + uuid + "';"); //TODO: Hier geht es weiter mit überarbeiten!
+            MySQL.update("UPDATE STC-Stats SET deaths= '" + deaths + "' WHERE uuid= '" + uuid + "';");
         } else {
             createPlayer(uuid);
             setDeaths(uuid, deaths);
@@ -100,8 +98,11 @@ public class SQLStats {
     }
 
     public static void addKills(String uuid, Integer kills) {
+
+        int newKills = SQLStats.getKills(uuid) + kills;
+
         if(playerExists(uuid)){
-            setKills(uuid, Integer.valueOf(getKills(uuid).intValue() + kills.intValue()));
+            MySQL.update("UPDATE STC-Stats SET kills= '" + newKills + "' WHERE uuid= '" + uuid + "';");
         }else{
             createPlayer(uuid);
             addKills(uuid, kills);
@@ -110,8 +111,11 @@ public class SQLStats {
     }
 
     public static void addDeaths(String uuid, Integer deaths) {
+
+        int newDeaths = SQLStats.getDeaths(uuid) + deaths;
+
         if(playerExists(uuid)){
-            setDeaths(uuid, Integer.valueOf(getDeaths(uuid).intValue() + deaths.intValue()));
+            MySQL.update("UPDATE STC-Stats SET deaths= '" + newDeaths + "' WHERE uuid= '" + uuid + "';");
         }else{
             createPlayer(uuid);
             addKills(uuid, deaths);
@@ -120,8 +124,11 @@ public class SQLStats {
     }
 
     public static void removeKills(String uuid, Integer kills) {
+
+        int newKills = SQLStats.getKills(uuid) - kills;
+
         if(playerExists(uuid)){
-            setKills(uuid, Integer.valueOf(getKills(uuid).intValue() - kills.intValue()));
+            MySQL.update("UPDATE STC-Stats SET kills= '" + newKills + "' WHERE uuid= '" + uuid + "';");
         }else{
             createPlayer(uuid);
             removeKills(uuid, kills);
@@ -130,8 +137,11 @@ public class SQLStats {
     }
 
     public static void removeDeaths(String uuid, Integer deaths) {
+
+        int newDeaths = SQLStats.getKills(uuid) - deaths;
+
         if(playerExists(uuid)){
-            setDeaths(uuid, Integer.valueOf(getKills(uuid).intValue() - deaths.intValue()));
+            MySQL.update("UPDATE STC-Stats SET kills= '" + newDeaths + "' WHERE uuid= '" + uuid + "';");
         }else{
             createPlayer(uuid);
             removeDeaths(uuid, deaths);
