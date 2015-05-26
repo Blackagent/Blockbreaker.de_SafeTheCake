@@ -1,5 +1,6 @@
 package de.blockbreaker.stc.mysql;
 
+import de.blockbreaker.stc.Data;
 import de.blockbreaker.stc.STC;
 import org.bukkit.Bukkit;
 
@@ -29,7 +30,7 @@ public class MySQL {
         if(!isConnected()){
             try {
                 con = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database, username, password);
-                Bukkit.getConsoleSender().sendMessage(STC.getInstance().prefix + "MySQL Verbindung aufgebaut!");
+                Bukkit.getConsoleSender().sendMessage(Data.Cprefix + "MySQL Verbindung aufgebaut!");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -41,7 +42,7 @@ public class MySQL {
         if(isConnected()) {
             try {
                 con.close();
-                Bukkit.getConsoleSender().sendMessage(STC.getInstance().prefix + "MySQL Verbindung geschlossen!");
+                Bukkit.getConsoleSender().sendMessage(Data.Cprefix + "MySQL Verbindung geschlossen!");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -59,9 +60,6 @@ public class MySQL {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
-            //Hallo Justin, da ich so lieb bin - Hier muss die andere Tabelle rein wie da oben nur halt iwie maps nennen und dann als spalten spawn 1 spawn 2 und son scheiss alles als VARCHAR(100) :DD
-
         }
     }
 
