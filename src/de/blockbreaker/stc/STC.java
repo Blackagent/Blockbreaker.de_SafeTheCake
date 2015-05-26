@@ -53,8 +53,8 @@ public class STC {
         System.out.println(" =-=-=-=-=-=-=-=-=-=-=-=");
     }
 
-    public static STC getInstance () {
 
+    public static STC getInstance () {
         return instance;
     }
 }

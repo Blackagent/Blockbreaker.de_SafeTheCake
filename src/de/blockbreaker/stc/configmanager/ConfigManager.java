@@ -4,6 +4,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by Janne on 26.05.2015.
@@ -19,6 +20,15 @@ public class ConfigManager {
     }
 
     public static void createConfig() {
+
+        if(!file.exists()) {
+            //!!!!!!!!!!!!!!
+            try {
+                cfg.save(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
 
 
