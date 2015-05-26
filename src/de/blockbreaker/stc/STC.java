@@ -19,7 +19,7 @@ public class STC {
         System.out.println(" =-=-=-=-=-=-=-=-=-=-=-=");
         System.out.println(Data.Janne);
         System.out.println(" =-=-=-=-=-=-=-=-=-=-=-=");
-        System.out.println(Data.BB + " erfolgreich geladen [by 3LaF]");
+        System.out.println(Data.BB +);
         System.out.println(" =-=-=-=-=-=-=-=-=-=-=-=");
 
         //MySQL
