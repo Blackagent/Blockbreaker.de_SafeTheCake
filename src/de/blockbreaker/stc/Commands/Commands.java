@@ -22,23 +22,30 @@ public class Commands implements CommandExecutor {
             return true;
         }
 
-        if(cmd.getName().equalsIgnoreCase("stc")){
-            if(args.length == 0){
+        if(cmd.getName().equalsIgnoreCase("stc")) {
+            if (args.length == 0) {
                 p.sendMessage("§b=-=-=-=-=-§6 STC §4Help §b-=-=-=-=-=");
-                p.sendMessage("           &4 /stc set lobby");
-                p.sendMessage("           &4 /stc set teamspawn <farbe>");
-                p.sendMessage("           &4 /stc remove teamspawn <farbe> <id>");
-                p.sendMessage("           &4 /stc set Arena");
-                p.sendMessage("           &4 /stc set Haendler");
-                p.sendMessage("           &4 /stc set spawner <art>");
+                p.sendMessage("      &4 /stc setLobby");
+                p.sendMessage("      &4 /stc setTeamspawnBlau");
+                p.sendMessage("      &4 /stc setTeamspawnRot");
+                p.sendMessage("      &4 /stc setTeamspawnGrün");
+                p.sendMessage("      &4 /stc setTeamspawnLila");
+                p.sendMessage("      &4 /stc removeTeamspawnFARBE<ID>");
+                p.sendMessage("      &4 /stc setArena");
+                p.sendMessage("      &4 /stc setHaendler");
+                p.sendMessage("      &4 /stc setspawner");
                 p.sendMessage("§b=-=-=-=-=-§6 STC §4Help §b-=-=-=-=-=");
 
 
             }
 
+
         }
 
 
-        return false;
+
+
+
+            return false;
     }
 }

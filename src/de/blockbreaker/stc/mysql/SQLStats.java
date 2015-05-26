@@ -81,7 +81,7 @@ public class SQLStats {
 
     public static void setKills(String uuid, Integer kills) {
         if (playerExists(uuid)) {
-            MySQL.update("UPDATE STC-Stats SET kills= '" + kills + "' WHERE uuid= '" + uuid + "';");
+            MySQL.update("UPDATE STC-Stats SET kills= '" + kills + "' WHERE uuid= '" + uuid + "';");w
         } else {
             createPlayer(uuid);
             setKills(uuid, kills);
